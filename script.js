@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 
-    // reload data after refresh
+    // data reload start
     $("#nineAM").append(localStorage.getItem("9am"));
     $("#tenAM").append(localStorage.getItem("10am"));
     $("#elevenAM").append(localStorage.getItem("11am"));
@@ -11,15 +11,15 @@ $(document).ready(function () {
     $("#threePM").append(localStorage.getItem("3pm"));
     $("#fourPM").append(localStorage.getItem("4pm"));
     $("#fivePM").append(localStorage.getItem("5pm"));
-    // reload data end
+    // data reload end
 
 
-    // current day is displayed
+    // current day display
     var date = new Date();
     $("#currentDay").text(moment().format('MMMM Do YYYY'));
 
 
-    // time blocks for standard hours
+    // standard hours time blocks start
     $(".container").children().each(function () {
         if (parseInt($(this).attr("id").replace("t", "")) < date.getHours()) {
             $(this).addClass("past")
@@ -29,9 +29,9 @@ $(document).ready(function () {
         }
         else { $(this).addClass("future") }
     })
-    // end time block for standard hours
+    // standard hours time blocks end
 
-    // data entry points for the individual rows as per time
+    // info for individual times
    
    
     // 9am
